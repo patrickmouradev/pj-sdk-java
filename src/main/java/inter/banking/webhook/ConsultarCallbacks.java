@@ -8,7 +8,8 @@ import inter.exceptions.SdkException;
 import inter.model.Config;
 import inter.model.Erro;
 import inter.utils.HttpUtils;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,8 +20,8 @@ import static inter.constants.Constants.GENERIC_EXCEPTION_MESSAGE;
 import static inter.constants.Constants.URL_BANKING_WEBHOOK;
 import static inter.constants.Constants.ESCOPO_BANKING_WEBHOOK_BANKING_READ;
 
-@Slf4j
 public class ConsultarCallbacks {
+    private static final Logger log = LoggerFactory.getLogger(ConsultarCallbacks.class);
 
     public PaginaCallbacks recuperar(Config config, String tipoWebhook, String dataHoraInicio, String dataHoraFim, int pagina, Integer tamanhoPagina, FiltroBuscarCallbacks filtro) throws SdkException {
         log.info("ConsultarCallbacks {} {}-{}", config.getClientId(), dataHoraInicio, dataHoraFim);

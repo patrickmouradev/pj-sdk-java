@@ -6,7 +6,7 @@
 
   <groupId>inter</groupId>
   <artifactId>inter-sdk-java</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 
   <name>inter-sdk-java</name>
 
@@ -14,8 +14,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <slf4j.version>1.7.33</slf4j.version>
     <logback.version>1.2.11</logback.version>
+    <slf4j.version>1.7.33</slf4j.version>
+
   </properties>
 
   <dependencies>
@@ -29,7 +30,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.24</version>
+      <version>1.18.26</version>
       <scope>provided</scope>
     </dependency>
 
@@ -52,11 +53,7 @@
       <version>${logback.version}</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>${slf4j.version}</version>
-    </dependency>
+
 
     <dependency>
       <groupId>com.googlecode.json-simple</groupId>
@@ -80,6 +77,13 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>
@@ -89,19 +93,19 @@
         <artifactId>maven-shade-plugin</artifactId>
         <version>3.4.1</version>
       </plugin>
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-javadoc-plugin</artifactId>-->
-<!--        <version>3.4.1</version>-->
-<!--        <executions>-->
-<!--          <execution>-->
-<!--            <id>attach-javadocs</id>-->
-<!--            <goals>-->
-<!--              <goal>jar</goal>-->
-<!--            </goals>-->
-<!--          </execution>-->
-<!--        </executions>-->
-<!--      </plugin>-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.4.1</version>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
